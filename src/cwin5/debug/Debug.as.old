@@ -1,0 +1,84 @@
+package cwin5.debug 
+{
+	import flash.display.Sprite;
+	import flash.display.Stage;
+	import flash.events.KeyboardEvent;
+	import flash.text.TextField;
+	import flash.ui.Keyboard;
+	
+	/**
+	 * Debug
+	 * @author cwin5
+	 */
+	public class Debug 
+	{
+		////////////////////////////////////////////////////////////////////////////////
+		// 输出文本
+		private static var _text:TextField = null;
+		private static var _sprite:Sprite = null;
+		
+		private static var _content:String = "";				// 文字内容
+		
+		/**
+		 * Debug初始化
+		 * @param	stage
+		 */
+		public static function init(stage:Stage):void
+		{
+			if (_sprite == null)
+			{
+				_text = new TextField();
+				_text.width = stage.stageWidth;
+				_text.height = stage.stageHeight;
+				_text.mouseEnabled = false;
+				_text.wordWrap = true;
+				
+				_sprite = new Sprite();
+				_sprite.graphics.beginFill(0xffffff , .8);
+				_sprite.graphics.drawRect(0, 0, stage.stageWidth , stage.stageHeight);
+				_sprite.graphics.endFill();
+				
+				_sprite.addChild(_text);
+				
+				_sprite.mouseEnabled = false;	
+				stage.addChild(_sprite);
+				
+				stage.addEventListener(KeyboardEvent.KEY_UP , onKeyUp);
+				
+				_sprite.visible = false;
+				debug("舞台宽:" + stage.stageWidth , "舞台高:" + stage.stageHeight);
+			}
+		}
+		
+		static private function onKeyUp(e:KeyboardEvent):void 
+		{
+			if (e.keyCode == Keyboard.DELETE)
+			{
+				_text.htmlText = "";
+				_content = "";
+				_text.scrollV = 0;
+				return;
+			}
+			
+			if (e.keyCode != Keyboard.ESCAPE)
+			{
+				return;
+			}
+			_sprite.visible = !_sprite.visible;
+		}
+		
+		/**
+		 * 输出,可多选参数
+		 * @param	...arg
+		 */
+		public static function debug(...arg):void
+		{
+			if (_text == null)
+				return;
+			_content += "[" + arg.toString() + "]" + "\n";
+			_text.htmlText = _content;
+			_text.scrollV = _text.maxScrollV;
+		}
+		
+	}
+}
