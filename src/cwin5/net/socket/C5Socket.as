@@ -65,8 +65,10 @@ package cwin5.net.socket
 		public function close():void
 		{
 			removeEvent();
-			if (_socket){
-				_socket.close();
+			if (_socket)
+			{
+				if(_socket.connected)
+					_socket.close();
 				_socket = null;
 			}
 		}
