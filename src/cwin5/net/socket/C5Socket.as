@@ -104,7 +104,7 @@ package cwin5.net.socket
 				if(_socket.hasEventListener(ProgressEvent.SOCKET_DATA)) _socket.removeEventListener(ProgressEvent.SOCKET_DATA,onSocketData);
 				if(_socket.hasEventListener(Event.CLOSE)) _socket.removeEventListener(Event.CLOSE,onSocketClose);
 				if (_socket.hasEventListener(SecurityErrorEvent.SECURITY_ERROR)) _socket.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, onSecurityError);
-				if(_parser.hasEventListener(IOErrorEvent.IO_ERROR)) _parser.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
+				if(_parser.hasEventListener(IOErrorEvent.IO_ERROR)) _parser.removeEventListener(IOErrorEvent.IO_ERROR, onIOError);
 			}
 		}
 		
