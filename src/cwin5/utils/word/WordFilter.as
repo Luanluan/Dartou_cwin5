@@ -10,7 +10,10 @@ package cwin5.utils.word
 	 */
 	public class WordFilter
 	{
-		[Embed(source = "WordLibrary.inc", mimeType = "application/octet-stream")]
+		//此版本为严格版本，用于通过相关部门的检查，如版署审核等
+		//[Embed(source = "WordLibrary.inc", mimeType = "application/octet-stream")]
+		//此版本为精简筛选版，一般使用此版本以不影响玩家正常游戏聊天
+		[Embed(source = "WordLibrary_simple.inc", mimeType = "application/octet-stream")]
 		private static const WORDS_LIB:Class;
 		
 		
