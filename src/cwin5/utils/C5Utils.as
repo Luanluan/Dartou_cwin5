@@ -283,37 +283,56 @@
 			if (browserAgent != null && browserAgent.indexOf("Firefox") >= 0)
 			{
 				return "Firefox";
-			}
-			else if (browserAgent != null && browserAgent.indexOf("Chrome") >= 0)
+			}else if (browserAgent != null && browserAgent.indexOf("Safari") >= 0)
+			{
+				return "Safari";
+			}else if (browserAgent != null && browserAgent.indexOf("360SE") >= 0)
+			{
+				return "360SE";
+			}else if (browserAgent != null && browserAgent.indexOf("360Chrome") >= 3)
+			{
+				return "360Chrome";
+			}else if (browserAgent != null && browserAgent.indexOf("Chrome") >= 0)
 			{
 				return "Chrome";
 			}
-			else if (browserAgent != null && browserAgent.indexOf("Safari") >= 0)
+			else if (browserAgent != null && browserAgent.indexOf("QQBrowser") >= 0)
 			{
-				return "Safari";
-			}
-			else if (browserAgent != null && browserAgent.indexOf("MSIE") >= 0)
+				return "QQ";
+			}else if (browserAgent != null && browserAgent.indexOf("LBBROWSER") >= 0)
 			{
-				if (browserAgent.indexOf("MSIE 8.0") >= 0)
-				{
-					return "MSIE 8.0";
-				}
-				else if (browserAgent.indexOf("MSIE 6") >= 0)
-				{
-					return "MSIE 6.0";
-				}
-				else if (browserAgent.indexOf("MSIE 9") >= 0)
-				{
-					return "MSIE 9.0";
-				}
-				else if (browserAgent.indexOf("MSIE 7") >= 0)
-				{
-					return "MSIE 7.0";
-				}
-				else
-				{
+				return "Liebao";
+			}else if (browserAgent != null && browserAgent.indexOf("Maxthon") >= 0)
+			{
+				return "Maxthon";
+			}else if (browserAgent != null && browserAgent.indexOf("UBrowser") >= 0)
+			{
+				return "UC";
+			}else if (browserAgent != null && browserAgent.indexOf("BIDUBrowser") >= 0)
+			{
+				return "Baidu";
+			}else if (browserAgent != null && browserAgent.indexOf("MSIE") >= 0)
+			{
+				//if (browserAgent.indexOf("MSIE 8.0") >= 0)
+				//{
+					//return "MSIE 8.0";
+				//}
+				//else if (browserAgent.indexOf("MSIE 6") >= 0)
+				//{
+					//return "MSIE 6.0";
+				//}
+				//else if (browserAgent.indexOf("MSIE 9") >= 0)
+				//{
+					//return "MSIE 9.0";
+				//}
+				//else if (browserAgent.indexOf("MSIE 7") >= 0)
+				//{
+					//return "MSIE 7.0";
+				//}
+				//else
+				//{
 					return "MSIE";
-				}
+				//}
 			}
 			else if (browserAgent != null && browserAgent.indexOf("Opera") >= 0)
 			{
