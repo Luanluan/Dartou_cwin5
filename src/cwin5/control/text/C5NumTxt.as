@@ -14,8 +14,8 @@ package cwin5.control.text
 	{
 		
 		private var _textField:TextField;
-		private var _max:int;
-		private var _min:int;
+		private var _max:Number;
+		private var _min:Number;
 		
 		private var _enable:Boolean = false;
 		
@@ -50,7 +50,7 @@ package cwin5.control.text
 		{
 			if (_needCheckTxt)
 			{
-				var num:int = int(_textField.text);
+				var num:Number = Number(_textField.text);
 				if (num < _min)
 					num = _min;
 				else if (num > _max)
@@ -81,7 +81,7 @@ package cwin5.control.text
 			_isSelection = isSelection;
 		}
 		
-		public function setValue(max:int , min:int):void
+		public function setValue(max:Number , min:Number):void
 		{
 			_max = max;
 			_min = min;
